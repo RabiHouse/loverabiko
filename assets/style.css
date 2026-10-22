@@ -1,0 +1,83 @@
+:root{--pink:#ff9bb8;--pink-d:#e8668f;--pink-l:#fff0f4;--mint:#d6f1e6;--cream:#fffaf3;--text:#5b4650;--line:#ffd3e0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;color:var(--text);background:var(--cream);line-height:1.9}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--pink-d)}
+.en{display:block;font-size:.8em;opacity:.75;font-weight:400}
+header{background:#fff;border-bottom:3px dotted var(--line);position:sticky;top:0;z-index:5}
+.nav{max-width:960px;margin:0 auto;padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:700;color:var(--pink-d);font-size:1.15rem}
+.logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.3rem;flex-wrap:wrap}
+.nav li a{display:block;padding:.2rem .9rem;border-radius:99px;text-decoration:none;color:var(--text);font-size:.95rem;line-height:1.4;text-align:center}
+.nav li a:hover,.nav li a[aria-current]{background:var(--pink-l);color:var(--pink-d)}
+main{max-width:960px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.hero{text-align:center;padding:1rem 0 .5rem}
+.hero img{border-radius:28px;margin:0 auto 1.2rem;box-shadow:0 8px 24px rgba(255,155,184,.25)}
+h1{font-size:clamp(1.5rem,4.5vw,2.2rem);color:var(--pink-d);margin:.4rem 0}
+h2{font-size:1.4rem;color:var(--pink-d);margin:0 0 .6rem;padding-bottom:.3rem;border-bottom:3px dotted var(--line)}
+h3{font-size:1.1rem;margin:1.2rem 0 .3rem;color:var(--pink-d)}
+section{background:#fff;border-radius:28px;padding:1.6rem 1.4rem;margin:1.6rem 0;box-shadow:0 4px 14px rgba(255,155,184,.15)}
+section.mint{background:var(--mint)}
+.lead{text-align:center}
+.btn{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;padding:.4rem 1.4rem;border-radius:99px;font-weight:700;margin:.3rem .2rem}
+.btn:hover{background:var(--pink-d);color:#fff}
+.btn.sub{background:#fff;color:var(--pink-d);border:2px solid var(--pink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.8rem;margin:1rem 0}
+.grid img{border-radius:16px;aspect-ratio:1/1;object-fit:cover;width:100%;background:var(--pink-l)}
+.grid.masonry{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.grid.masonry img{aspect-ratio:auto;object-fit:contain}
+.profile{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;margin:.5rem 0}
+.profile dt{font-weight:700;color:var(--pink-d)}
+.profile dd{margin:0 0 .5rem}
+.story p{margin:.9rem 0}
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{border-left:4px solid var(--pink);padding:.2rem 0 .2rem 1rem;margin:0 0 1.4rem}
+.timeline time{font-weight:700;color:var(--pink-d)}
+.timeline h3{margin:.1rem 0 .3rem;color:var(--text)}
+.timeline p{margin:.2rem 0}
+.sns{text-align:center}
+footer{text-align:center;padding:1.5rem 1rem 3rem;font-size:.85rem;color:#a58d97}
+.to-top{position:fixed;right:1rem;bottom:1rem;border:0;border-radius:99px;background:var(--pink);color:#fff;padding:.5rem 1rem;font:inherit;font-weight:700;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+@media(max-width:600px){.profile{grid-template-columns:1fr}.profile dd{margin-bottom:.8rem}}
+
+/* 共通：ボタン内の英語は同じ行に */
+.btn .en{display:inline;margin-left:.5em;font-size:.75em;color:inherit}
+
+/* トップページのバランス調整 */
+.home section{text-align:center}
+.home .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+.home .grid img{width:calc(25% - .6rem);min-width:140px;max-width:210px}
+.home .grid.five img{width:calc(20% - .7rem);min-width:130px;max-width:170px;background:#fff;border:2px solid var(--pink-l)}
+.home .hero p{max-width:34em;margin-left:auto;margin-right:auto}
+.home .btn{margin:.4rem .3rem}
+
+/* Aboutページ */
+.about h1{text-align:center;margin-bottom:0}
+.about h1 .en{margin-top:.2rem}
+.profile-card{display:grid;grid-template-columns:260px 1fr;gap:2rem;align-items:center}
+.profile-card .face{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:40px;border:5px solid var(--line);box-shadow:0 8px 20px rgba(255,155,184,.3)}
+.profile-card .species{margin:.2rem 0 .8rem}
+.about .profile{grid-template-columns:max-content 1fr;gap:.45rem 1.2rem;margin:0}
+.about .profile dd{margin:0}
+.about section>.grid{grid-template-columns:repeat(3,1fr);gap:1rem}
+.about section>.grid img{border-radius:22px}
+.about section h2{text-align:center}
+.about .profile-card h2{text-align:left}
+@media(max-width:700px){
+.profile-card{grid-template-columns:1fr;gap:1.2rem}
+.profile-card .face{max-width:220px;margin:0 auto}
+.about .profile-card h2,.profile-card .species{text-align:center}
+.about .profile{grid-template-columns:max-content 1fr;font-size:.92rem}
+.about section>.grid{gap:.5rem}
+}
+
+/* トップ：NFT */
+.nft-main{display:flex;gap:1.2rem;justify-content:center;align-items:flex-start;margin:1rem 0}
+.nft-main figure{margin:0;flex:1 1 0;max-width:380px}
+.nft-main img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px}
+.nft-main figcaption{margin-top:.6rem;font-size:.92rem;line-height:1.7}
+.nft-row{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin:1.2rem 0}
+.nft-row img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px}
+@media(max-width:600px){.nft-main{gap:.6rem}.nft-main figcaption{font-size:.78rem}.nft-row{gap:.3rem}.nft-row img{border-radius:8px}}
